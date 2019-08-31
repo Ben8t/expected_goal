@@ -1,5 +1,7 @@
 FROM python:3.6
 
+WORKDIR app
+
 RUN pip install --upgrade pip
 
 RUN pip install numpy pandas scikit-learn xgboost sklearn-pandas joblib
