@@ -31,3 +31,9 @@ def evaluation_metrics(y_test, y_pred):
 def print_evaluation_metrics(metrics):
     for key, value in metrics.items():
         print(key.replace("_", " ").upper(), " : ", value)
+
+def plot_evaluation(y_test, y_pred, y_pred_proba):
+    fig, axs = plt.subplots(ncols=2, figsize=(20, 5))
+    skplt.metrics.plot_confusion_matrix(y_test, y_pred, normalize=True, ax=axs[0])
+    skplt.metrics.plot_roc(y_test, y_pred_proba, ax=axs[1])
+    plt.plot()
