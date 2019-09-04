@@ -9,7 +9,7 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--save", help="input for saving file", action="store_true")
     args = parser.parse_args()
 
-    pipeline = load("./data/model/xgboost_model.pkl")
+    pipeline = load("./data/model/logistic_regression_model.pkl")
     data = pandas.read_csv(args.data)
     
     y_pred = pipeline.predict_proba(data)
